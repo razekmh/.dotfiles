@@ -1,0 +1,2 @@
+require("razekmh")
+print("hello")
