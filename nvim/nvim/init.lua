@@ -1,2 +1,1 @@
 require("razekmh")
-print("hello")

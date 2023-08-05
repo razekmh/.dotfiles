@@ -1,2 +1,2 @@
 require("razekmh.remap")
-print("hello from mahmoud")
+require("razekmh.set")
