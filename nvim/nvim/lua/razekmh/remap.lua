@@ -47,3 +47,17 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- remap copilot
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap('i', '<C-J>','copilot#Accept("<CR>")', {expr=true, silent=true}) 
+vim.api.nvim_set_keymap('i', '<C-K>','copilot#Cancel()', {expr=true, silent=true})
+vim.api.nvim_set_keymap('i', '<C-L>','copilot#Next()', {expr=true, silent=true})
+vim.api.nvim_set_keymap('i', '<C-H>','copilot#Prev()', {expr=true, silent=true})
+
+
+
+
+
+
+
