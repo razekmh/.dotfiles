@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Global Settings
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse off
+yabai -m config window_topmost off
+yabai -m config window_shadow on
+
+# Layout - This is what makes windows tile!
+yabai -m config layout bsp
+
+# Gaps (adjust to your liking)
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding 10
+yabai -m config right_padding 10
+yabai -m config window_gap 10
+
+# Define your space names/counts (e.g., 7 spaces)
+# Space 1: Web | Space 2: Term | Space 3: Code | Space 4-7: Misc
+
+yabai -m space 1 --label web
+yabai -m space 2 --label term
+yabai -m space 3 --label code
+yabai -m space 4 --label comms
+yabai -m space 5 --label docs
+
+# App Rules (Find app names via 'yabai -m query --windows')
+yabai -m rule --add app="^Arc$" space=web
+yabai -m rule --add app="^Brave-browser$" space=web
+yabai -m rule --add app="^Kitty$" space=term
+yabai -m rule --add app="^Code$" space=code
+yabai -m rule --add app="^Cursor$" space=code
+yabai -m rule --add app="^Discord$" space=comms
+yabai -m rule --add app="^Slack$" space=comms
+yabai -m rule --add app="^Teams$" space=comms
+yabai -m rule --add app="^Obsidian$" space=docs
+
+#yabai -m signal --add event=window_created app="^Slack$" action="sleep 0.5 && yabai -m window \$YABAI_WINDOW_ID --space 4"
+#yabai -m config window_placement second_child
+#yabai -m config window_shadow on
