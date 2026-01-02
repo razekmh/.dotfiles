@@ -1,0 +1,42 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Order: Directory -> Git Branch -> Python -> Character
+format = """
+[🫣 ](yellow)\
+$directory\
+$git_branch\
+$git_status\
+$python\
+$character
+"""
+
+[directory]
+style = "bold cyan"
+
+[git_branch]
+symbol = "🌱 "
+style = "bold green"
+format = "[[ on ](white)$symbol$branch]($style) "
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+detect_extensions = []
+detect_files = []
+detect_folders = []
+format = "[ via ](white)[$symbol($version )]($style)"
+
+[character]
+success_symbol = "[❯](bold magenta)"
+error_symbol = "[✖](bold red)"
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[package]
+disabled = true
+
